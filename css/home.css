@@ -1,0 +1,42 @@
+.logo {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    padding: 8px;
+}
+.text-pink{
+    color: #ff3195;
+}
+
+.portfolio-item{
+    max-height: 350px;
+    min-height: 349px;
+    background-color: #1a1b1b;
+}
+
+.portfolio-img{
+    max-height: 350px;
+    min-height: 349px;
+    object-fit: fill;
+}
+
+.portfolio-img img{
+    object-fit: cover;
+    
+    /*rellenar el contenedor*/
+    width: 100%;
+    height: 100%;
+
+}
+.bg-primary-80 {
+    background-color: #00c2fe80 !important;
+  }
+.marka{
+    padding: 16px;
+}
+.marka img{
+    margin: 20px;
+    max-width: 20%;
+    border-radius: 8px;
+}
