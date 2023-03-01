@@ -40,3 +40,105 @@
     max-width: 20%;
     border-radius: 8px;
 }
+#card-info:hover{
+    outline: none !important;
+}
+#bodyModal{
+    /* background-color: #d0d0d0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+
+}
+
+#bodyModal img{
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+    border : 1px solid #1a1b1b;
+    max-width: 70%;
+}
+#bodyModal .card{ 
+    width: 30%;
+    border: none;
+    min-width: 30%;
+    align-self: stretch;
+}
+
+#bodyModal .card h4{
+    font-size: 20px;
+    font-weight: normal;
+    border-bottom: #adadad 1px solid;
+}
+#bodyModal .card p{
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 8px;
+    margin-bottom: 0px !important;
+}
+.card ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card ul li{
+    content: "\f0da";
+    font-family: FontAwesome;
+    width: 16px;
+    height: 16px;
+    margin: 4px;
+    border-radius: 50%;
+}
+.vision-body{
+    background-image: url(../img/emprendedor.svg);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    /* border-top: #ff3195 4px solid; */
+    /* border-bottom: #ff3195 4px solid; */
+    padding: 0 40px 0 40px;
+    overflow: hidden;
+    max-height: 450px;
+}
+.vision-body img{
+    width: 500px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    margin: 40px;
+    /* border : 6px solid #ff3195; */
+}
+.vision-body .title{
+     align-self: flex-start;
+     display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
+.vision-body .content{
+    background-color: #00c2fe ;
+    width: 80%;
+    padding: 16px;
+    text-align: center;
+    color : #fff;
+    border-radius: 0px 0px 20px 20px;
+    border-left : 3px solid #ff3195;
+    border-right : 3px solid #ff3195;
+    border-bottom : 3px solid #ff3195;
+}
+.vision-body .title button{
+   
+   
+    margin-top: 32px;
+    margin-bottom: 32px;
+    
+}
