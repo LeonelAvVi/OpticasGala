@@ -79,6 +79,7 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="index.html" class="nav-item nav-link">Inicio</a>
                             <a href="about.html" class="nav-item nav-link ">Nosotros</a>
+                            <a href="catalog.html" class="nav-item nav-link">Catálogo</a>
                             <a href="galery.html" class="nav-item nav-link">Galería</a>
                             <a href="blog.html" class="nav-item nav-link active">Blogs</a>
                             <a href="contact.html" class="nav-item nav-link">Contáctanos</a>
@@ -306,20 +307,19 @@
                 <p><i class="fa fa-phone-alt text-primary mr-2"></i>71172522</p>
                 <p><i class="fa fa-envelope text-primary mr-2"></i>opticagalaservice@gmail.com</p>
                 <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-light btn-social mr-2" href="https://www.facebook.com/gala.optica/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-light btn-social" href="https://www.instagram.com/opticas_gala/"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="font-weight-semi-bold text-primary mb-4">Quick Links</h4>
+                <h4 class="font-weight-semi-bold text-primary mb-4">Enlaces</h4>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Nosotros</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Galeria</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Blogs</a>
-                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
+                    <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+                    <a class="text-white mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>Nosotros</a>
+                    <a class="text-white mb-2" href="catalog.html"><i class="fa fa-angle-right mr-2"></i>Catálogo</a>
+                    <a class="text-white mb-2" href="galery.html"><i class="fa fa-angle-right mr-2"></i>Galeria</a>
+                    <a class="text-white mb-2" href="blog.html"><i class="fa fa-angle-right mr-2"></i>Blogs</a>
+                    <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
@@ -327,10 +327,10 @@
 
                 <div class="w-100">
                     <div class="input-group">
-                        <input type="text" class="form-control border-0" style="padding: 25px;" placeholder="Mensaje">
+                        <input type="text" id="input-footer" class="form-control border-0" style="padding: 25px;" placeholder="Mensaje">
                         <div class="input-group-append">
-                            <button class="btn btn-primary px-4">
-                                <!-- icono de whatsapp -->
+                            <button class="btn btn-primary px-4"
+                                    onclick="window.open(`https://api.whatsapp.com/send?phone=59171172522&text=${document.getElementById('input-footer').value}`, '_blank');">
                                 <i class="fab fa-whatsapp"></i>
                                 Enviar
                             </button>
@@ -343,7 +343,7 @@
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: #3E3E4E !important;">
         <div class="row">
             <div class="col-lg-12 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white">&copy; <a href="#">www.opticagala.com</a>. Todos los derechos reservados. Desarrollado por <a href="#">Marketeria</a> & <a href="#">Cocoders</a>
+                <p class="m-0 text-white">&copy; <a href="#">www.opticagala.com</a>. Todos los derechos reservados. Desarrollado por <a href="https://lamarketeriaagency.com/">Marketeria</a> & <a>Cocoders</a>
                 </p>
             </div>
             <!-- <div class="col-lg-6 text-center text-md-right">

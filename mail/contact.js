@@ -35,16 +35,19 @@ $(function () {
                     $('#contactForm').trigger("reset");
                 },
                 error: function () {
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                            .append("</button>");
-                    $('#success > .alert-danger').append($("<strong>").text("Sorry " + name + ", it seems that our mail server is not responding. Please try again later!"));
-                    $('#success > .alert-danger').append('</div>');
-                    $('#contactForm').trigger("reset");
+                    // $('#success').html("<div class='alert alert-danger'>");
+                    // $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                    //         .append("</button>");
+                    // $('#success > .alert-danger').append($("<strong>").text("Sorry " + name + ", it seems that our mail server is not responding. Please try again later!"));
+                    // $('#success > .alert-danger').append('</div>');
+                    // $('#contactForm').trigger("reset");
                 },
                 complete: function () {
                     setTimeout(function () {
-                        $this.prop("disabled", false);
+                        // $this.prop("disabled", false);
+                        //enviar mensaje al whatsapp
+                        var url = "https://api.whatsapp.com/send?phone=59171172522&text=Hola, soy " + name + " y mi correo es " + email + " y mi mensaje es: " + message;
+                        window.open(url, '_blank');
                     }, 1000);
                 }
             });
