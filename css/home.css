@@ -1,5 +1,5 @@
 .logo {
-    width: 100px;
+    /* width: 100px; */
     height: 100px;
     display: block;
     margin: 0 auto;
@@ -151,4 +151,13 @@
     color: #ff3195;
     font-size: 20px;
     font-weight: bold;
+}
+
+.catologo-home {
+    margin: 0 !important;
+    border-radius: 0px !important;
+    max-height: 250px;
+}
+.mt-8{
+    margin-top: 120px;
 }
