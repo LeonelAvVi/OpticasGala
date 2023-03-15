@@ -103,7 +103,7 @@ let card = (product) => {
             }
         </div>
         <div class="bg-light rounded-bottom">
-        <p class=" mx-2 text-secondary font-weight-semi-bold" style="color:#3E3E4E">${product.name}</p>
+        <p class="h4 py-2 mx-2 text-secondary font-weight-semi-bold text-lg" style="color:#3E3E4E">${product.name}</p>
         <p class="mx-2" style="font-size: small;">
             ${product.description} 
         </p>
@@ -146,7 +146,7 @@ loadModal = (id) => {
     document.getElementById("bodyModal").innerHTML = `
         <img class="img-fluid w-100" src="img/catalog/${product.image}" alt="" style="border-radius: 10px 10px 0 0;"> 
         <div class="card p-3">
-            <h4 class="text-secondary">${product.name}</h4>
+            <h4 class="text-secondary h1">${product.name}</h4>
             <p>
                 ${product.description}
             </p>

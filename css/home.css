@@ -6,7 +6,7 @@
     padding: 8px;
 }
 .text-pink{
-    color: #ff3195;
+    color: #f06292  ;
 }
 
 .portfolio-item{
@@ -30,7 +30,7 @@
 
 }
 .bg-primary-80 {
-    background-color: #00c2fe80 !important;
+    background-color: #64b5f6 80 !important;
   }
 .marka{
     padding: 16px;
@@ -50,7 +50,7 @@
     align-items: center;
     padding: 16px;
     width: 100%;
-
+    flex-direction: row;
 }
 
 #bodyModal img{
@@ -68,7 +68,8 @@
 }
 
 #bodyModal .card h4{
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: bold;
     font-weight: normal;
     border-bottom: #adadad 1px solid;
 }
@@ -102,8 +103,8 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    /* border-top: #ff3195 4px solid; */
-    /* border-bottom: #ff3195 4px solid; */
+    /* border-top: #f06292   4px solid; */
+    /* border-bottom: #f06292   4px solid; */
     padding: 0 40px 0 40px;
     overflow: hidden;
     max-height: 450px;
@@ -115,7 +116,7 @@
     border: none;
     border-radius: 50%;
     margin: 40px;
-    /* border : 6px solid #ff3195; */
+    /* border : 6px solid #f06292  ; */
 }
 .vision-body .title{
      align-self: flex-start;
@@ -125,15 +126,15 @@
         align-items: center;
 }
 .vision-body .content{
-    background-color: #00c2fe ;
+    background-color: #64b5f6  ;
     width: 80%;
     padding: 16px;
     text-align: center;
     color : #fff;
     border-radius: 0px 0px 20px 20px;
-    border-left : 3px solid #ff3195;
-    border-right : 3px solid #ff3195;
-    border-bottom : 3px solid #ff3195;
+    border-left : 3px solid #f06292  ;
+    border-right : 3px solid #f06292  ;
+    border-bottom : 3px solid #f06292  ;
 }
 .vision-body .title button{
    
@@ -148,7 +149,7 @@
     width: 100%;
     text-align: center;
     padding: 24px;
-    color: #ff3195;
+    color: #f06292  ;
     font-size: 20px;
     font-weight: bold;
 }
@@ -160,4 +161,68 @@
 }
 .mt-8{
     margin-top: 120px;
+}
+
+/* media query */
+/* celular */
+@media (max-width: 767px) {
+    .embed-responsive-16by9::before {
+         padding-top: 0px !important; 
+        
+    }
+    #bodyModal{
+        flex-direction: column;
+    }
+    #bodyModal img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border : 1px solid #1a1b1b;
+        max-width: 100%;
+    }
+    #bodyModal .card{
+        width: 100%;
+        min-width: 100%;
+    }
+    .vision-body{
+        flex-direction: column;
+        /* max-height: 100%; */
+        padding: 0 2px 0 2px;
+    }
+    .vision-body img{
+        display: none;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        margin: 40px;
+        /* border : 6px solid #f06292  ; */
+    }
+    .vision-body .title{
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    .vision-body .content{
+        background-color: #64b5f6  ;
+        width: 80%;
+        padding: 16px;
+        text-align: center;
+        color : #fff;
+        border-radius: 0px 0px 20px 20px;
+        border-left : 3px solid #f06292  ;
+        border-right : 3px solid #f06292  ;
+        border-bottom : 3px solid #f06292  ;
+    }
+    .vision-body .title button{
+        background-color: #64b5f6  !important;
+        margin-top: 32px;
+        margin-bottom: 32px;
+        border: none;
+    }
+
 }
