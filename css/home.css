@@ -162,6 +162,13 @@
 .mt-8{
     margin-top: 120px;
 }
+.logo-horizontal{
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+    /* max-width: 100%;
+    max-height: 100%; */
+}
 
 /* media query */
 /* celular */
