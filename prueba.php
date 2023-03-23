@@ -1,6 +1,6 @@
 <?php
 // Configuración de la conexión a la base de datos
-$servername = "localhost";
+$servername = "localhost:3306";
 $username = "opticasg_opticasg";
 $password = "F8m*ZbD#9XcE";
 $dbname = "opticasg_Catalogo";
