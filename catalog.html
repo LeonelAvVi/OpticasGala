@@ -127,9 +127,9 @@
                     <div class="mb-5">
                         <div class="w-100">
                             <div class="input-group">
-                                <input type="text" class="form-control" style="padding: 25px;" placeholder="Característica">
+                                <input id="search" type="text" class="form-control" style="padding: 25px;" placeholder="Característica">
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary px-4">Buscar</button>
+                                    <button class="btn btn-primary px-4" onclick="search()">Buscar</button>
                                 </div>
                             </div>
                         </div>
@@ -137,24 +137,24 @@
                     <div class="mb-5">
                         <h3 class="mb-4 section-title">Categorias</h3>
                         <ul class="list-inline m-0">
-                            <li class="mb-1 py-2 px-3 bg-light d-flex justify-content-between align-items-center">
-                                <a class="text-dark" href="#"><i class="fa fa-angle-right text-secondary mr-2"></i>Todos</a>
+                            <li class="mb-1 py-2 px-3 bg-light d-flex justify-content-between align-items-center" onclick="viewCategory('all')">
+                                <a class="text-dark"><i class="fa fa-angle-right text-secondary mr-2"></i>Todos</a>
                                 <span class="badge badge-primary badge-pill" id="all">150</span>
                             </li>
-                            <li class="mb-1 py-2 px-3 bg-light d-flex justify-content-between align-items-center">
-                                <a class="text-dark" href="#"><i class="fa fa-angle-right text-secondary mr-2"></i>Mujer</a>
+                            <li class="mb-1 py-2 px-3 bg-light d-flex justify-content-between align-items-center" onclick="viewCategory('women')">
+                                <a class="text-dark"><i class="fa fa-angle-right text-secondary mr-2"></i>Mujer</a>
                                 <span id="women" class="badge badge-primary badge-pill">30</span>
                             </li>
-                            <li class="mb-1 py-2 px-3 bg-light d-flex justify-content-between align-items-center">
-                                <a class="text-dark" href="#"><i class="fa fa-angle-right text-secondary mr-2"></i>Hombre</a>
+                            <li class="mb-1 py-2 px-3 bg-light d-flex justify-content-between align-items-center" onclick="viewCategory('man')">
+                                <a class="text-dark"><i class="fa fa-angle-right text-secondary mr-2"></i>Hombre</a>
                                 <span id="man" class="badge badge-primary badge-pill">78</span>
                             </li>
-                            <li class="mb-1 py-2 px-3 bg-light d-flex justify-content-between align-items-center">
-                                <a class="text-dark" href="#"><i class="fa fa-angle-right text-secondary mr-2"></i>Niños</a>
+                            <li class="mb-1 py-2 px-3 bg-light d-flex justify-content-between align-items-center" onclick="viewCategory('chield')">
+                                <a class="text-dark" ><i class="fa fa-angle-right text-secondary mr-2"></i>Niños</a>
                                 <span id="chield" class="badge badge-primary badge-pill">56</span>
                             </li>
-                            <li class="py-2 px-3 bg-light d-flex justify-content-between align-items-center">
-                                <a class="text-dark" href="#"><i class="fa fa-angle-right text-secondary mr-2"></i>Unisex</a>
+                            <li class="py-2 px-3 bg-light d-flex justify-content-between align-items-center" onclick="viewCategory('unisex')">
+                                <a class="text-dark"><i class="fa fa-angle-right text-secondary mr-2"></i>Unisex</a>
                                 <span id="unisex" class="badge badge-primary badge-pill">20</span>
                             </li>
                         </ul>
@@ -192,22 +192,37 @@
         </div>
     </div>
     <!-- Detail End -->
-
     <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body p-0" id="bodyM">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+                      
+
+    <!-- <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>        
-                    <!-- 16:9 aspect ratio -->
+                    
                     <div id="bodyModal" class="embed-responsive embed-responsive-16by9">
                        
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
