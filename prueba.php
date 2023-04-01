@@ -1,5 +1,6 @@
 <?php
 // Configuración de la conexión a la base de datos
+
 $local = true;
 if ($local ==  true) {
     $servername = "localhost";
@@ -12,6 +13,7 @@ if ($local ==  true) {
     $password = "F8m*ZbD#9XcE";
     $dbname = "opticasg_Catalogo";
 }
+
 // Crea una conexión a la base de datos
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -19,6 +21,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Error al conectar a la base de datos: " . mysqli_connect_error());
 }
+
 $resultados = array();
 // Crea una consulta SQL
 $sql = "SELECT * FROM productos";
@@ -57,4 +60,5 @@ $json = json_encode($resultados);
 //echo "<script>console.log('PHP: " . $json . "');</script>";
 mysqli_close($conn);
 echo $json;
+
 ?>
