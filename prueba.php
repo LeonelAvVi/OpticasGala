@@ -1,7 +1,7 @@
 <?php
 // Configuración de la conexión a la base de datos
+$local = false;
 
-$local = true;
 if ($local ==  true) {
     $servername = "localhost";
     $username = "root";
