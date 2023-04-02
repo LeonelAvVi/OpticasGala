@@ -94,6 +94,16 @@ searchInput.addEventListener("input", () => {
   }
 });
 
+function fechaMenorAUnMes(fecha) {
+    const unMesEnMs = 1000 * 60 * 60 * 24 * 30; // Milisegundos en un mes
+    const fechaActual = new Date();
+    const fechaComparar = new Date(fecha);
+    return fechaActual - fechaComparar < unMesEnMs;
+  }
+  
+
+
+
 
 
 let card = (product) => {
@@ -103,16 +113,16 @@ let card = (product) => {
             <div class="card-img-top position-relative">
                 <img class="img-fluid rounded-top" src="data:image/png;base64,${product.image}" alt="${product.name}">
                 ${
-                    product.cantidad > 0 ? '<span class="badge badge-danger badge-pill position-absolute p-2" style="top: 10px; left: 10px;">Agotado</span>'
+                    product.cantidad <= 0 ? '<span class="badge badge-danger badge-pill position-absolute p-2" style="top: 10px; left: 10px;">Agotado</span>'
                     :
-                    product.new == "1" ?'<span class="badge badge-primary badge-pill position-absolute p-2" style="top: 10px; left: 10px;">Nuevo</span>':''
+                    fechaMenorAUnMes(product.fecha) ?'<span class="badge badge-primary badge-pill position-absolute p-2" style="top: 10px; left: 10px;">Nuevo</span>':''
                 }
             </div>
             <div class="card-body">
                 <h5 class="card-title text-secondary font-weight-semi-bold text-lg mb-2">${product.name}</h5>
                 <p class="card-text text-muted mb-2">${product.description}</p>
                 <p class="card-text font-weight-semi-bold font-large text-secondary mb-3">Bs: ${product.price}</p>
-                <button class="btn btn-sm btn-primary py-2 color-white mb-1" data-toggle="modal" data-target="#videoModal" onclick="loadModal(${product.id})" ${product.cantidad > 0 ? 'disabled' : ''}>${product.cantidad > 0 ? 'Agotado' : 'Ver producto'}</button>
+                <button class="btn btn-sm btn-primary py-2 color-white mb-1" data-toggle="modal" data-target="#videoModal" onclick="loadModal(${product.id})" ${product.cantidad <= 0 ? 'disabled' : ''}>${product.cantidad <= 0 ? 'Agotado' : 'Ver producto'}</button>
             </div>
         </div>
     </div>
