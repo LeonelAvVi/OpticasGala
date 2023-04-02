@@ -87,22 +87,29 @@ const modalCreate = () => {
                     <label for="message-text" class="col-form-label">Imagen:</label>
                     <input type="file" class="form-control" id="imagen" name="imagen" >
                 </div>
-                <div class="form-group">
-                    <label for="message-text" class="col-form-label">Categoria:</label>
-                    <input type="text" class="form-control" id="categoria" name="categoria">
-                </div>
-                <div class="form-group">
-                    <label for="message-text" class="col-form-label">Fecha:</label>
-                    <input type="text" class="form-control" id="fecha" name="fecha">
+                <div class="form-group d-flex flex-row gap-2">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Categoria:</label>
+                        <select class="form-control" id="categoria" name="categoria">
+                            <option value="">Seleccione una categoría</option>
+                            <option value="women">Mujer</option>
+                            <option value="man">Hombre</option>
+                            <option value="chield">Niños</option>
+                            <option value="unisex">Unisex</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Fecha:</label>
+                        <input type="date" class="form-control" id="fecha" name="fecha">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="message-text" class="col-form-label">Marca:</label>
                     <input type="text" class="form-control" id="mark" name="mark">
                 </div>
-                <div class="form-group">
-                    <label for="message-text" class="col-form-label">Nuevo:</label>
-                    <input type="text" class="form-control" id="nuevo" name="new">
-                </div>
+                
+                    <input type="hidden" class="form-control" id="nuevo" name="new" value="0">
+                
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary" >Actualizar</button>
                 </div>
@@ -131,6 +138,7 @@ const modalUpdate = ( id, nombre, descripcion, precio, cantidad, imagen,categori
                 method="POST"
                 enctype="multipart/form-data"
             >
+                <input type="hidden" class="form-control" id="nuevo" value="0" name="new">
                 <input type="hidden" name="type" id="type" value="update">
                 <div class="form-group">
                 <input type="hidden" id="id" value="${id}" name="id">
@@ -155,22 +163,27 @@ const modalUpdate = ( id, nombre, descripcion, precio, cantidad, imagen,categori
                     <label for="message-text" class="col-form-label">Imagen:</label>
                     <input type="file" class="form-control" id="imagen" name="imagen" value="${imagen}">
                 </div>
-                <div class="form-group">
-                    <label for="message-text" class="col-form-label">Categoria:</label>
-                    <input type="text" class="form-control" id="categoria" name="categoria" value="${categoria}">
-                </div>
-                <div class="form-group">
-                    <label for="message-text" class="col-form-label">Fecha:</label>
-                    <input type="text" class="form-control" id="fecha" name="fecha" value="${fecha}">
+                <div class="form-group d-flex flex-row gap-2">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Categoria:</label>
+                        <select class="form-control" id="categoria" name="categoria" >
+                            <option value="${categoria}" select>Seleccione una categoría</option>
+                            <option value="women">Mujer</option>
+                            <option value="man">Hombre</option>
+                            <option value="chield">Niños</option>
+                            <option value="unisex">Unisex</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Fecha:</label>
+                        <input type="date" class="form-control" id="fecha" name="fecha" value="${fecha}">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="message-text" class="col-form-label">Marca:</label>
                     <input type="text" class="form-control" id="mark" value="${mark}" name="mark">
                 </div>
-                <div class="form-group">
-                    <label for="message-text" class="col-form-label">Nuevo:</label>
-                    <input type="text" class="form-control" id="nuevo" value="${nuevo}" name="new">
-                </div>
+                    
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary" >Actualizar</button>
                 </div>
