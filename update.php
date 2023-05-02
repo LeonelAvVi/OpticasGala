@@ -35,7 +35,7 @@
 
 $type = $_POST['type'];
 
-$local = false;
+$local = true;
 if ($local ==  true) {
     $servername = "localhost";
     $username = "root";

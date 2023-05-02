@@ -7,7 +7,7 @@ fetch('prueba.php')
     data.forEach((item) => {
         //alert(item);
         html += rowProduct(item);
-        console.log(item);
+        //console.log(item);
     })
     document.getElementById("productos").innerHTML = html;
     //cargarData();
@@ -34,9 +34,7 @@ const search = () => {
 }
 
 const searchInput = document.getElementById("search");
-
 searchInput.addEventListener("input", () => {
-
   console.log(searchInput.value);
   if(searchInput.value == ""){
     let html = '';
@@ -48,6 +46,42 @@ searchInput.addEventListener("input", () => {
     document.getElementById("productos").innerHTML = html;
   }
 });
+
+const loadChance = () => {
+    console.log("cargando...");
+//   const fileInput = document.getElementById("imagen");
+//   console.log(fileInput.files[0]);
+//   const label = document.getElementById("imageCreate");
+//   if(fileInput.files[0].size > 800000){
+//     label.innerHTML = "El archivo no debe pesar mas de 2MB. Cambiando el tamaño de la imagen....";
+//     //reducir tamaño de la imagen
+//     const reader = new FileReader();
+//     reader.readAsDataURL(fileInput.files[0]);
+//     reader.onload = function () {
+//       const img = new Image();
+//       img.src = reader.result;
+//       img.onload = function () {
+//         const elem = document.createElement('canvas');
+//         elem.width = 200;
+//         elem.height = 200;
+//         const ctx = elem.getContext('2d');
+//         ctx.drawImage(img, 0, 0, 200, 200);
+//         ctx.canvas.toBlob((blob) => {
+//           const file = new File([blob], fileInput.files[0].name, {
+//             type: 'image/jpeg',
+//             lastModified: Date.now()
+//           });
+//           console.log(file);
+//           fileInput.files[0] = file;
+//           label.innerHTML = file.name+file.size;
+//         }, 'image/jpeg', 1);
+//       }
+//     }
+//   }else{
+//     label.innerHTML = fileInput.files[0].name+fileInput.files[0].size;
+//   }
+}
+
 
 const modalCreate = () => {
     let html = `
@@ -86,6 +120,7 @@ const modalCreate = () => {
                 <div class="form-group">
                     <label for="message-text" class="col-form-label">Imagen:</label>
                     <input type="file" class="form-control" id="imagen" name="imagen" >
+                    <p class="text-danger" id="imageCreate"></p>
                 </div>
                 <div class="form-group d-flex flex-row gap-2">
                     <div class="form-group">
