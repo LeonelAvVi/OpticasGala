@@ -1,6 +1,6 @@
 <?php
 // Configuración de la conexión a la base de datos
-$local = true;
+$local = false;
 
 if ($local ==  true) {
     $servername = "localhost";
