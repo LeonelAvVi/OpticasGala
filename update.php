@@ -48,9 +48,10 @@ if ($local ==  true) {
     $dbname = "opticasg_Catalogo";
 }
 // Crea una conexión a la base de datos
-$conexion = mysqli_connect($servername, $username, $password, $dbname);
+
 
 if ($type == 'create'){ 
+    $conexion = mysqli_connect($servername, $username, $password, $dbname);
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];
     $precio = $_POST['precio'];
@@ -65,27 +66,38 @@ if ($type == 'create'){
     $nuevo = $_POST['new'];
     $fecha = $_POST['fecha'];
 
-    // Insertar los datos en la tabla
-    $sql = "INSERT INTO productos (name,description, image, category, mark,new,amount,price,fecha,cantidad) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    $stmt = mysqli_prepare($conexion, $sql);
-    mysqli_stmt_bind_param($stmt, "ssbssiiisi", $nombre,$descripcion, $imagenBinario, $categoria, $marca, $nuevo, $cantidad, $precio, $fecha, $cantidad);
-    $imagenBinario = file_get_contents($imagen);
-    mysqli_stmt_send_long_data($stmt, 2, $imagenBinario);
-    mysqli_stmt_execute($stmt);
+    try {
+        $sql = "INSERT INTO productos (name,description, image, category, mark,new,amount,price,fecha,cantidad) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = mysqli_prepare($conexion, $sql);
+        mysqli_stmt_bind_param($stmt, "ssbssiiisi", $nombre,$descripcion, $imagenBinario, $categoria, $marca, $nuevo, $cantidad, $precio, $fecha, $cantidad);
+        $imagenBinario = file_get_contents($imagen);
+        mysqli_stmt_send_long_data($stmt, 2, $imagenBinario);
+        mysqli_stmt_execute($stmt);
 
-    if (mysqli_stmt_affected_rows($stmt) > 0) {
-        echo "<p>Datos guardados correctamente</p>
-        <a href='admin.php' class='btn btn-primary'>Regresar</a>
-        ";
-    } else {
-        echo "<p>Error al guardar los datos</p>
-        <a href='admin.php' class='btn btn-primary'>Regresar</a>";
+        if (mysqli_stmt_affected_rows($stmt) > 0) {
+            echo "<p>Datos guardados correctamente</p>
+            <a href='admin.php' class='btn btn-primary'>Regresar</a>
+            ";
+        } else {
+            //imprimir el error
+
+            echo "<p>Error al guardar los datos</p>
+            <a href='admin.php' class='btn btn-primary'>Regresar</a>";
+        }
+    } catch (Exception $e) {
+        echo "<p>Error al guardar los datos</p>";
+        echo "<p>".$e->getMessage()."</p>";
+        echo "<a href='admin.php' class='btn btn-primary'>Regresar</a>";
     }
+
+    // Insertar los datos en la tabla
+    
 
     mysqli_stmt_close($stmt);
 }
 
 if($type == "update"){
+    $conexion = mysqli_connect($servername, $username, $password, $dbname);
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];
@@ -139,6 +151,7 @@ if($type == "update"){
 }
 
 if($type == "delete"){
+    $conexion = mysqli_connect($servername, $username, $password, $dbname);
     $id = $_POST['id'];
 
     $sql = "DELETE FROM productos WHERE id = ?";
@@ -160,6 +173,7 @@ if($type == "delete"){
 }
 
 if($type == "shopping"){
+    $conexion = mysqli_connect($servername, $username, $password, $dbname);
     $id = $_POST['id'];
     $cantidad = (int)$_POST['cantidad'];
     $operacion = $_POST['operacion'];
